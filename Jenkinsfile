@@ -26,6 +26,13 @@ pipeline {
                     echo "Multiline shell steps works too in Deploy stage"
                     ls -lah
                 '''
+				retry(3) {
+                    sh './flakey-deploy.sh'
+                }
+
+                timeout(time: 3, unit: 'MINUTES') {
+                    sh './health-check.sh'
+                }
             }
         }
     }
