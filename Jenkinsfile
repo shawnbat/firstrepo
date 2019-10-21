@@ -25,17 +25,20 @@ pipeline {
                 sh '''
                     echo "Multiline shell steps works too in Deploy stage"
                     ls -lah
+					echo "Working directory is:  "
+					pwd
                 '''
-				retry(3) {
+				/* retry(3) {
                     sh './flakey-deploy.sh'
                 }
-
+				*/
                 timeout(time: 3, unit: 'MINUTES') {
                     sh './health-check.sh'
                 }
             }
         }
     }
+	
 	post {
         always {
             echo 'This will always run'
