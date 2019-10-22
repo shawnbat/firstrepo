@@ -10,10 +10,11 @@ pipeline {
                 sh '''
                     echo "Multiline shell steps works too in Build stage"
                     ls -lah
+					'./health-check.sh'
                 '''
             }
         }
-		stage('Test') {
+		/*stage('Test') {
             steps {
                 sh 'echo "We Testing"'
                 sh '''
@@ -39,11 +40,12 @@ pipeline {
                 timeout(time: 1, unit: 'MINUTES') {
 				sh 'id'
                     // sh 'whoami'
-			//sh 'sudo ./health-check.sh'
-                }
+				}
 				
             }
         }
+		*/
+		
     }
 	
 	post {
