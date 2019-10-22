@@ -37,7 +37,8 @@ pipeline {
                 }
 				*/
                 timeout(time: 1, unit: 'MINUTES') {
-                    sh './health-check.sh'
+                     sh 'whoami'
+			//sh './health-check.sh'
                 }
 				
             }
