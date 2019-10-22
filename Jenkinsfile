@@ -37,7 +37,7 @@ pipeline {
 					echo "Working directory is:  "
 					pwd
                 '''
-				/* retry(2) {
+				/* retry(1) {
                     sh './flakey-deploy.sh'
                 }
 				*/
