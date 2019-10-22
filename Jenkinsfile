@@ -11,6 +11,10 @@ pipeline {
                     echo "Multiline shell steps works too in Build stage"
                     ls -lah
                 '''
+				echo "Hello World!"
+                sh "echo Hello from the shell"
+                sh "hostname"
+                sh "uptime"
             }
         }
 		stage('Test') {
