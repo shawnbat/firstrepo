@@ -44,7 +44,8 @@ pipeline {
                 timeout(time: 1, unit: 'MINUTES') {
 				sh 'id'
                     // sh 'whoami'
-				sh '/var/lib/jenkins/workspace/mypipeline_master/health-check.sh'
+				
+				sh './health-check.sh'
                 }
 				
             }
