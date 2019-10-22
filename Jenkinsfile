@@ -45,7 +45,7 @@ pipeline {
 				sh 'id'
                     // sh 'whoami'
 				
-				sh 'sudo sh ./health-check.sh'
+				sh './health-check2.sh'
                 }
 				
             }
