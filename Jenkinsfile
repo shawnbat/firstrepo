@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+				echo "[*] Starting build (id: ${env.BUILD_ID}) on ${env.JENKINS_URL}"
                 sh 'echo "We Building"'
                 sh '''
                     echo "Multiline shell steps works too in Build stage"
@@ -17,7 +18,7 @@ pipeline {
                 sh "uptime"
             }
         }
-		stage('Test') {
+		/*stage('Test') {
             steps {
                 sh 'echo "We Testing"'
                 sh '''
@@ -26,7 +27,7 @@ pipeline {
 					node --version
                 '''
             }
-        }
+        }*/
 		stage('Deploy') {
             steps {
                 sh 'echo "We Deploying now"'
@@ -43,7 +44,7 @@ pipeline {
                 timeout(time: 1, unit: 'MINUTES') {
 				sh 'id'
                     // sh 'whoami'
-				sh '/var/lib/jenkins/workspace/mypipeline_master/health-check.sh'
+				sudo sh '/var/lib/jenkins/workspace/mypipeline_master/health-check.sh'
                 }
 				
             }
