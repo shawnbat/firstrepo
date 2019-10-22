@@ -18,7 +18,7 @@ pipeline {
                 sh "uptime"
             }
         }
-		/*stage('Test') {
+		stage('Test') {
             steps {
                 sh 'echo "We Testing"'
                 sh '''
@@ -27,7 +27,7 @@ pipeline {
 					node --version
                 '''
             }
-        }*/
+        }
 		stage('Deploy') {
             steps {
                 sh 'echo "We Deploying now"'
